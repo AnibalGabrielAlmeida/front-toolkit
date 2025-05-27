@@ -1,7 +1,14 @@
 @import "tailwindcss";
 
 @theme {
-    --color-primary: #4a90e2; /*color primario*/
+    --color-primary: #E9C46A; /*color primario*/
+    --color-secondary: #C3B7A8;   /* Color complementario o de apoyo */
+    --color-accent: #F0CB71;       /* Color para destacar detalles o llamadas a la acción */
+    --color-muted: #5B5043;         /* Tonos suaves para fondos secundarios, tarjetas, etc. */
+    --color-dark:  #43413C;         /* Texto oscuro, contornos, elementos fuertes */
+    --color-light: #F5ECE2;          /* Fondos claros o texto sobre fondos oscuros */
+    --color-background: #264653;    /* Fondo principal del sitio */
+    --color-border: #907C4C;        /* Líneas divisorias, bordes suaves */
     --shadow-primary: 0 4px 6px rgba(0, 0, 0, 0.1);/*sombra con color*/
     --font-sans: "Helvetica Neue", sans-serif; /*fuente principal*/
     --text-lg: 1.125rem; /*tamaño de fuente*/
@@ -21,3 +28,4 @@
     --ease-in: cubic-bezier(0.4, 0, 0.2, 1); /*transición ease-in*/
     --animate-spin: spin 1s linear infinite; /*animación de giro*/
 }
+

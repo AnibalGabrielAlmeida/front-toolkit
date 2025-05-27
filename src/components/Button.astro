@@ -1,17 +1,17 @@
 ---
 // Clases para variantes
 const variantClasses = {
-  primary: "bg-blue-600 text-white hover:bg-blue-700",
-  secondary: "bg-gray-100 text-gray-800 hover:bg-gray-200",
+  primary: "bg-primary text-text hover:bg-blue-700",
+  secondary: "bg-secondary text-gray-800 hover:bg-gray-200",
   danger: "bg-red-600 text-white hover:bg-red-700",
   ghost: "bg-transparent text-blue-600 hover:bg-blue-100 border border-blue-600"
 };
 
 // Clases para tamaños
 const sizeClasses = {
-  sm: "px-3 py-1 text-sm",
-  md: "px-4 py-2 text-base",
-  lg: "px-5 py-3 text-lg"
+  sm: "px-2 py-1 text-sm",
+  md: "px-3 py-2 text-base",
+  lg: "px-4 py-3 text-lg"
 };
 
 // Props con valores por defecto
@@ -44,7 +44,7 @@ const {
 };
 
 const combinedClass = `
-  inline-flex items-center gap-2 rounded-2xl font-medium transition-all duration-200
+  inline-flex items-center gap-2 font-medium transition-all duration-200
   ${variantClasses[variant] ?? variantClasses.primary}
   ${sizeClasses[size] ?? sizeClasses.md}
   ${disabled || isLoading ? "opacity-50 cursor-not-allowed" : ""}
