@@ -12,8 +12,11 @@ import Button from '../components/Button.astro';
 		<title>Astro</title>
 	</head>
 	<body>
-		<h1 class="text-primary">Astro</h1>
-        <Button label="Texto"/>
+        <div class="bg-background px-2">
+		    <h1 class="text-primary">Astro</h1>
+            <Button label="Texto"/>
+        <div/>
+            
         <slot/>
 	</body>
 </html>
