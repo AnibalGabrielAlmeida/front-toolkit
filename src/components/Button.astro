@@ -1,0 +1,75 @@
+---
+// Clases para variantes
+const variantClasses = {
+  primary: "bg-blue-600 text-white hover:bg-blue-700",
+  secondary: "bg-gray-100 text-gray-800 hover:bg-gray-200",
+  danger: "bg-red-600 text-white hover:bg-red-700",
+  ghost: "bg-transparent text-blue-600 hover:bg-blue-100 border border-blue-600"
+};
+
+// Clases para tamaños
+const sizeClasses = {
+  sm: "px-3 py-1 text-sm",
+  md: "px-4 py-2 text-base",
+  lg: "px-5 py-3 text-lg"
+};
+
+// Props con valores por defecto
+type Variant = keyof typeof variantClasses;
+type Size = keyof typeof sizeClasses;
+
+// Props con valores por defecto
+const {
+  label = "",
+  type = "button",
+  size = "md", // sm | md | lg
+  variant = "primary", // primary | secondary | danger | ghost
+  isLoading = false,
+  disabled = false,
+  iconLeft = null,
+  iconRight = null,
+  onClick = null,
+  className = ""
+} = Astro.props as {
+  label?: string;
+  type?: "button" | "submit" | "reset";
+  size?: Size;
+  variant?: Variant;
+  isLoading?: boolean;
+  disabled?: boolean;
+  iconLeft?: any;
+  iconRight?: any;
+  onClick?: any;
+  className?: string;
+};
+
+const combinedClass = `
+  inline-flex items-center gap-2 rounded-2xl font-medium transition-all duration-200
+  ${variantClasses[variant] ?? variantClasses.primary}
+  ${sizeClasses[size] ?? sizeClasses.md}
+  ${disabled || isLoading ? "opacity-50 cursor-not-allowed" : ""}
+  ${className}
+`.trim();
+---
+
+<button
+  type={type}
+  class={combinedClass}
+  disabled={disabled || isLoading}
+  onclick={onClick}
+>
+  {isLoading ? (
+    <span class="flex items-center gap-2">
+      <svg class="animate-spin h-4 w-4 text-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/>
+        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"/>
+      </svg>
+    </span>
+  ) : (
+    <>
+      {iconLeft && <span class="flex items-center">{iconLeft}</span>}
+      {label && <span>{label}</span>}
+      {iconRight && <span class="flex items-center">{iconRight}</span>}
+    </>
+  )}
+</button>

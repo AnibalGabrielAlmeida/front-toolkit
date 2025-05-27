@@ -1,1 +1,23 @@
 @import "tailwindcss";
+
+@theme {
+    --color-primary: #4a90e2; /*color primario*/
+    --shadow-primary: 0 4px 6px rgba(0, 0, 0, 0.1);/*sombra con color*/
+    --font-sans: "Helvetica Neue", sans-serif; /*fuente principal*/
+    --text-lg: 1.125rem; /*tamaño de fuente*/
+    --font-weight-normal: 400; /*negrita-no negrita etc*/
+    --tracking-wide: 0.05em; /*espaciado entre letras*/
+    --leading-normal: 1.5; /*altura de línea*/
+    --container-width: 1200px; /*ancho del contenedor*/
+    --spacing-4: 1rem; /*spacing como mt px etc*/
+    --breakpoint-md: 768px; /*Breakpoints personalizados*/
+    --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);/*transiciones*/
+    --radius-md: 0.375rem; /*radio de borde*/
+    --drop-shadow-primary: 0 10px 15px rgba(0, 0, 0, 0.1); /*sombra de caja*/
+    --inset-shadow-primary: inset 0 2px 4px rgba(0, 0, 0, 0.06); /*sombra interna*/
+    --blur-primary: blur(10px); /*efecto de desenfoque*/
+    --perspective-primary: perspective(1000px); /*perspectiva 3D*/
+    --aspect-ratio-primary: 16 / 9; /*relación de aspecto*/
+    --ease-in: cubic-bezier(0.4, 0, 0.2, 1); /*transición ease-in*/
+    --animate-spin: spin 1s linear infinite; /*animación de giro*/
+}
